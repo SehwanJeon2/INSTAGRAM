@@ -28,7 +28,22 @@ def list(request):
     }
     return render(request, 'posts/list.html', context)
 
+
 def delete(request, post_id):
     post = Post.objects.get(pk=post_id)
     post.delete()
     return redirect('posts:list')
+
+
+def update(request, post_id):
+    post = Post.objects.get(pk=post_id)
+    if request.method == 'POST':
+        # 수정내용 DB에 반영
+        form = PostModelForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('posts:list')
+    else:
+        # 수정내용 편집
+        form = PostModelForm(instance=post)
+        return render(request, 'posts/update.html', {'form' : form})
