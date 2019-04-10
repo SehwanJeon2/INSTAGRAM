@@ -25,7 +25,7 @@ SECRET_KEY = '#%vr_ms)keh(rai)gm&#+s*-@f@oa(j2d2rmi(9)i&4*_0m3c%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["last-jeonsewallse.c9users.io"]
 
 
 # Application definition
