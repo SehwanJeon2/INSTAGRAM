@@ -3,7 +3,7 @@
 
 {% block body %}
 <h1>새로운 POST 작성하기</h1>
-<form method="POST" >
+<form method="POST" enctype="multipart/form-data">
   {% csrf_token %}
   {% bootstrap_form form %}
   {% buttons %}
