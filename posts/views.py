@@ -20,6 +20,7 @@ def create(request):
         }
         return render(request, 'posts/create.html', context)
 
+
 def list(request):
     # 모든 포스트를 보여줌
     posts = Post.objects.all()
